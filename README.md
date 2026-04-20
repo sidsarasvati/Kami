@@ -101,10 +101,6 @@ Then I was invited to present a talk based on my article "The Agent You Don't Kn
 - Got ideas or bugs? Open an issue or PR.
 - I have two cats, TangYuan and Coke. If you think kami delights your life, you can feed them <a href="https://miaoyan.app/cats.html?name=Kami" target="_blank">canned food 🥩</a>.
 
-<div align="center">
-  <a href="https://miaoyan.app/cats.html?name=Kami"><img src="https://cdn.jsdelivr.net/gh/tw93/MiaoYan@main/assets/sponsors.svg" width="1000" loading="lazy" /></a>
-</div>
-
 ## License
 
 MIT License. Feel free to use kami and contribute.
