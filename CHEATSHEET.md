@@ -7,7 +7,7 @@
 1. 页面背景 `#f5f4ed`（parchment），不用纯白
 2. 强调色只有油墨蓝 `#1B365D`
 3. 所有灰**暖调**（yellow-brown undertone），禁冷蓝灰
-4. 标题 serif，正文/UI sans
+4. 英文: serif 通吃标题和正文。中文: 标题 serif，正文 sans。UI 元素都用 sans
 5. Serif 字重固定 500，不用 bold
 6. 行距：标题 1.1-1.3 / 密排 1.4-1.45 / 阅读 1.5-1.55。禁 1.6+
 7. Tag 背景实色 hex，禁 rgba（WeasyPrint 双层矩形 bug）
@@ -152,7 +152,8 @@
 | 想做 | 怎么做 |
 |---|---|
 | 大标题 | serif 500，line-height 1.10-1.30 |
-| 正文阅读 | sans 400，9.5-10pt，1.55 |
+| 正文阅读（英文） | serif 400，9.5-10pt，1.55 |
+| 正文阅读（中文） | sans 400，9.5-10pt，1.55 |
 | 强调数字 | `color: var(--brand)`，不加粗 |
 | 分两段 | 1pt 品牌色 border-bottom，或 0.5pt 暖灰虚线 |
 | 引用 | 左 2pt 品牌实线 + olive 色 |

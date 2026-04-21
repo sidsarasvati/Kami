@@ -6,11 +6,11 @@
 
 Kaku（写代码）· Waza（练习惯）· **Kami（出文档）** 三部曲之一。把 Anthropic parchment 视觉语言 + 真实文档排版迭代的踩坑，封装成覆盖 6 种文档的模板 + 规范库。
 
-**不是**：纯简历工具、Waza 的子集、Web UI framework。
+**不是**: 纯简历工具、Waza 的子集、Web UI framework。
 
 ## 设计铁律
 
-全部在 `references/design.md` 开头的"设计宣言"段。任何改动之前先确认是否真的要违反那 8 条。
+全部在 `references/design.md` 开头的"设计宣言"段。任何改动之前先确认是否真的要违反那 9 条（第 9 条: 禁止 italic）。
 
 ## 文件职责
 
@@ -24,21 +24,16 @@ Kaku（写代码）· Waza（练习惯）· **Kami（出文档）** 三部曲之
 | `references/writing.md` | Claude | 低 |
 | `references/production.md` | Claude + 维护者 | 中（新踩坑追加） |
 | `assets/templates/*.html` / `slides.py` | Claude 填内容 | 中 |
-| `assets/examples/*.pdf` | README preview | 每次样式改动 |
+| `assets/demos/*.html/.pdf/.png` | README demo 展示 | 样式改动后重新生成 |
 | `scripts/build.py` | 维护者 + CI | 低 |
 
 ## 字体分发
 
-**主字体 TsangerJinKai02-W04.ttf 是商业字体**。user-supplied only，不进 skill 分发、不进 git。
+**TsangerJinKai02-W04.ttf 是商业字体**，已包含在仓库中。商业用途需从 [tsanger.cn](https://tsanger.cn) 获取授权。
 
-**本地开发姿势**：
-- 把 `.ttf` 放到 `assets/fonts/` 下
 - 所有 CN 模板和 CN demo 的 `<style>` 里都有 `@font-face { src: url("../fonts/TsangerJinKai02-W04.ttf") }`，相对路径挂载
-- 有字体 -> 自动用真字体；没字体 -> fallback 链自动接手（Source Han Serif SC -> Noto Serif CJK SC -> Songti SC -> Georgia）
-
-**打包 skill 前**：确认 `assets/fonts/*.ttf` 不在 git 里（`.gitignore` 已排除）。打 zip 或 `.skill` 时也要跳过。
-
-**用户侧**：README / HANDOFF 里写清楚"如需主字体，把仓耳今楷 02 W04 的 .ttf 放进 `assets/fonts/`"。没字体也能跑，只是视觉降一档到 Charter / Source Han Serif。
+- 没字体 -> fallback 链自动接手: Source Han Serif SC -> Noto Serif CJK SC -> Songti SC -> Georgia
+- 英文模板 body 和标题都用 Newsreader serif，sans 只用于 UI 元素
 
 ## 关键踩坑索引（详情在 production.md Part 4）
 
@@ -63,7 +58,7 @@ Kaku（写代码）· Waza（练习惯）· **Kami（出文档）** 三部曲之
 1. Copy 最接近的现有模板做起点
 2. 保持与 `design.md` 完全一致（不另创色板 / 字号）
 3. 在 `SKILL.md` 路由表加一行
-4. 在 `assets/examples/` 放一份生成好的 PDF
+4. 在 `assets/demos/` 放一份 demo HTML + 生成好的 PDF + 截图 PNG
 5. 若出现新独特 CSS 结构，追加到 `production.md` Part 4
 
 ## 验证流程
@@ -76,7 +71,7 @@ python3 scripts/build.py
 python3 scripts/build.py --check
 
 # 3. 字体是否真的加载了
-pdffonts assets/examples/resume.pdf | head
+pdffonts assets/demos/demo-musk-resume.pdf | head
 
 # 4. 隐私扫描（改动后）
 # 把 KEYWORDS 换成自己真实姓名 / 公司 / 电话等，避免误泄漏到模板

@@ -7,7 +7,7 @@ One-page quick reference. Scan before filling a template or tweaking a detail. F
 1. Page background `#f5f4ed` (parchment), never pure white
 2. Single accent: ink-blue `#1B365D`
 3. All grays **warm-toned** (yellow-brown undertone), no cool blue-gray
-4. Serif for headlines, sans for body / UI
+4. English: serif for headlines and body. Chinese: serif headlines, sans body. Sans for UI only
 5. Serif weight locked at 500, no bold
 6. Line-height: headlines 1.1-1.3 / dense 1.4-1.45 / reading 1.5-1.55. **Never 1.6+**
 7. Tag backgrounds solid hex, no rgba (WeasyPrint double-rectangle bug)
@@ -164,7 +164,8 @@ Screen (px) ≈ pt × 1.33.
 | Need | Use |
 |---|---|
 | Headline | serif 500, line-height 1.10-1.30 |
-| Reading body | sans 400, 9.5-10pt, 1.55 |
+| Reading body (EN) | serif 400, 9.5-10pt, 1.55 |
+| Reading body (CN) | sans 400, 9.5-10pt, 1.55 |
 | Emphasize a number | `color: var(--brand)`, no bold |
 | Divide two sections | 1pt brand border-bottom, or 0.5pt warm dotted |
 | Quote | 2pt brand left border + olive color |

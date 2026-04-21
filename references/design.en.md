@@ -110,7 +110,7 @@ font-family: "Newsreader",             /* Google Fonts - preferred */
              "Charter",                /* macOS system font */
              Georgia, "Times New Roman", serif;
 
-/* Sans for body / UI - Silicon Valley default */
+/* Sans for UI elements - Silicon Valley default */
 font-family: "Inter", "TsangerJinKai02",
              -apple-system, BlinkMacSystemFont,
              "Helvetica Neue", Arial, sans-serif;
