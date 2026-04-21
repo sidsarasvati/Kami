@@ -17,6 +17,9 @@
       <p class="eyebrow">Design System · v1.0 · April 2026</p>
       <h1>Kami<span class="cn">紙</span></h1>
       <p class="tagline">The paper your deliverables land on. One design language across six document types: warm parchment, a single ink-blue accent, serif-led hierarchy, editorial whitespace.</p>
+      <div style="margin-top:18px; display:flex; gap:10px;">
+        <a href="https://github.com/tw93/kami" class="btn btn-primary" style="text-decoration:none; font-size:12px;">GitHub</a>
+      </div>
     </div>
     <div class="meta">
       <div><b>Canvas</b>&nbsp;&nbsp;#f5f4ed</div>
@@ -27,29 +30,74 @@
     </div>
   </header>
 
-  <!-- ============ 00 MANIFESTO ============ -->
+  <!-- ============ 00 DEMOS ============ -->
   <section>
     <div class="section-head">
-      <p class="section-num">00 · Manifesto</p>
+      <p class="section-num">00 · See it</p>
+      <h2 class="section-title">See it</h2>
+      <p class="section-lede">Tell Claude what you need in plain language. It produces print-ready documents using kami's design language.</p>
+    </div>
+    <div class="demo-grid">
+      <div class="demo-card">
+        <a href="assets/demos/demo-tesla.pdf"><img src="assets/demos/demo-tesla.png" alt="Tesla company one-pager"></a>
+        <p class="demo-title">One-Pager</p>
+        <p class="demo-desc">Tesla company profile, single A4</p>
+      </div>
+      <div class="demo-card">
+        <a href="assets/demos/demo-agent-slides.pdf"><img src="assets/demos/demo-agent-slides-1.png" alt="Agent slides"></a>
+        <p class="demo-title">Slides</p>
+        <p class="demo-desc">Agent keynote, 6 slides</p>
+      </div>
+      <div class="demo-card">
+        <a href="assets/demos/demo-musk-resume.pdf"><img src="assets/demos/demo-musk-resume.png" alt="Musk resume"></a>
+        <p class="demo-title">Resume</p>
+        <p class="demo-desc">Founder CV, 2 pages strict</p>
+      </div>
+      <div class="demo-card">
+        <a href="assets/demos/demo-kaku.pdf"><img src="assets/demos/demo-kaku.png" alt="Kaku portfolio"></a>
+        <p class="demo-title">Portfolio</p>
+        <p class="demo-desc">Kaku terminal, 6 pages</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 01 INSTALL ============ -->
+  <section>
+    <div class="section-head">
+      <p class="section-num">01 · Install</p>
+      <h2 class="section-title">Install</h2>
+      <p class="section-lede">Just tell Claude what you need: "build me a resume", "make a slide deck for my talk", "turn this into a polished PDF". The skill auto-triggers, no slash command needed.</p>
+    </div>
+<pre class="code"><span class="c"># Claude Code</span>
+npx skills add tw93/kami -a claude-code -g -y
+
+<span class="c"># Codex</span>
+npx skills add tw93/kami -a codex -g -y</pre>
+  </section>
+
+  <!-- ============ 02 MANIFESTO ============ -->
+  <section>
+    <div class="section-head">
+      <p class="section-num">02 · Manifesto</p>
       <h2 class="section-title">Design Manifesto</h2>
     </div>
     <p class="manifesto">Warm parchment canvas, <em>ink blue</em> as the sole accent, serif carries authority, no hard shadows or flashy palettes. This is not a UI framework; it is an aesthetic constraint system for printed matter. It believes: quality documents read like literature, not dashboards.</p>
     <ol class="rules">
       <li><span class="n">1</span><p>Page background is parchment <code>#f5f4ed</code>, never pure white</p></li>
       <li><span class="n">2</span><p>Accent color is ink blue <code>#1B365D</code> only; no second chromatic hue</p></li>
-      <li><span class="n">3</span><p>All grays are warm (yellow-brown undertone); no cool blue-grays</p></li>
-      <li><span class="n">4</span><p>Headlines in serif, body and UI in sans</p></li>
+      <li><span class="n">3</span><p>All grays are warm, yellow-brown undertone; no cool blue-grays</p></li>
+      <li><span class="n">4</span><p>English: serif for headlines and body. Chinese: serif headlines, sans body</p></li>
       <li><span class="n">5</span><p>Serif weight fixed at 500, never bold. Single weight is part of the design language</p></li>
       <li><span class="n">6</span><p>Three line-height bands: tight titles 1.1-1.3 / dense 1.4-1.45 / reading 1.5-1.55. Never 1.6+</p></li>
-      <li><span class="n">7</span><p>Tag backgrounds must be solid hex; no rgba (WeasyPrint double-rectangle bug)</p></li>
+      <li><span class="n">7</span><p>Tag backgrounds must be solid hex; no rgba, WeasyPrint double-rectangle bug</p></li>
       <li><span class="n">8</span><p>Shadows: ring or whisper only, no hard drop shadows</p></li>
     </ol>
   </section>
 
-  <!-- ============ 01 COLOR ============ -->
+  <!-- ============ 03 COLOR ============ -->
   <section>
     <div class="section-head">
-      <p class="section-num">01 · Color</p>
+      <p class="section-num">03 · Color</p>
       <h2 class="section-title">Color</h2>
       <p class="section-lede">One accent + warm neutrals + zero cool colors. Ink blue covers no more than <b>5%</b> of any page. Beyond that is clutter, not restraint.</p>
     </div>
@@ -81,7 +129,7 @@
     </div>
 
     <h3 class="subhead">Tag Tints: rgba to solid hex</h3>
-    <p style="font-size:12.5px; color: var(--olive); max-width: 720px; margin: 0 0 16px; line-height: 1.55;">Ink Blue <code style="font-family:var(--mono);font-size:11px;background:#EEF2F7;color:var(--brand);padding:1px 5px;border-radius:2px">#1B365D</code> layered on parchment as equivalent solid hex. <b style="color:var(--brand);font-weight:500">Never</b> use <code style="font-family:var(--mono);font-size:11px;background:#EEF2F7;color:var(--brand);padding:1px 5px;border-radius:2px">rgba()</code>: WeasyPrint double-rectangle bug.</p>
+    <p style="font-size:14px; color: var(--olive); max-width: 720px; margin: 0 0 16px; line-height: 1.55;">Ink Blue <code style="font-family:var(--mono);font-size:12px;background:#EEF2F7;color:var(--brand);padding:1px 5px;border-radius:2px">#1B365D</code> layered on parchment as equivalent solid hex. <b style="color:var(--brand);font-weight:500">Never</b> use <code style="font-family:var(--mono);font-size:12px;background:#EEF2F7;color:var(--brand);padding:1px 5px;border-radius:2px">rgba()</code>: WeasyPrint double-rectangle bug.</p>
     <div class="tint-strip">
       <div class="tint"><span class="flag">&nbsp;</span><span class="sample" style="background:#EEF2F7">Tag sample</span><p class="opacity">0.08</p><span class="hex">#EEF2F7</span></div>
       <div class="tint"><span class="flag">&nbsp;</span><span class="sample" style="background:#E4ECF5">Tag sample</span><p class="opacity">0.14</p><span class="hex">#E4ECF5</span></div>
@@ -91,10 +139,10 @@
     </div>
   </section>
 
-  <!-- ============ 02 TYPE ============ -->
+  <!-- ============ 04 TYPE ============ -->
   <section>
     <div class="section-head">
-      <p class="section-num">02 · Typography</p>
+      <p class="section-num">04 · Typography</p>
       <h2 class="section-title">Typography</h2>
       <p class="section-lede">Serif carries authority, sans carries function. Serif weight fixed at 500: single weight is the system's signature.</p>
     </div>
@@ -102,27 +150,26 @@
     <div class="family-grid">
       <div class="family serif">
         <p class="glyph">Aa</p>
-        <p class="role">Serif · Headlines</p>
+        <p class="role">Serif · Headlines + Body</p>
         <p class="name">Newsreader / TsangerJinKai02</p>
-        <p class="use">All headlines, pull quotes, and numeric emphasis. Fixed weight 500, never bold. English uses Newsreader; Chinese uses TsangerJinKai02.</p>
+        <p class="use">All headlines, body text, pull quotes, and numeric emphasis. Fixed weight 500 for headlines, 400 for body. English uses Newsreader; Chinese uses TsangerJinKai02.</p>
       </div>
       <div class="family sans">
         <p class="glyph">Aa</p>
-        <p class="role">Sans · Body / UI</p>
+        <p class="role">Sans · UI</p>
         <p class="name">Inter / Source Han Sans</p>
-        <p class="use">Body text, labels, buttons, metadata. Default 400, labels and titles use 500-600. Silicon Valley editorial stack.</p>
+        <p class="use">Labels, buttons, metadata, eyebrows. Default 400, labels use 500-600. Chinese body text also uses sans.</p>
       </div>
       <div class="family mono">
         <p class="glyph">&lt;/&gt;</p>
         <p class="role">Mono · Code</p>
         <p class="name">JetBrains Mono</p>
-        <p class="use">Code blocks, version numbers, hex values, tabular figures. One size smaller when paired with serif or sans.</p>
+        <p class="use">Code blocks, version numbers, hex values, tabular figures.</p>
       </div>
     </div>
 
     <h3 class="subhead">Scale (print pt; screen px = pt x 1.33)</h3>
     <div class="type-grid">
-
       <div class="type-row">
         <div class="type-label">Display</div>
         <div class="type-sample display">Quality documents read<br>like literature</div>
@@ -144,19 +191,9 @@
         <div class="type-specs"><b>12-13 pt</b><br>weight 500<br>line 1.30</div>
       </div>
       <div class="type-row">
-        <div class="type-label">Body Lead</div>
-        <div class="type-sample lede">This is not a UI framework; it is an aesthetic constraint system for printed matter. Every rule trades one more option for one fewer temptation.</div>
-        <div class="type-specs"><b>11 pt</b><br>weight 400<br>line 1.55</div>
-      </div>
-      <div class="type-row">
         <div class="type-label">Body</div>
         <div class="type-sample body">Ink blue covers no more than 5% of any page. Beyond that is clutter, not restraint. All grays have a yellow-brown undertone: R ≈ G > B is the rule of thumb.</div>
         <div class="type-specs"><b>9.5-10 pt</b><br>weight 400<br>line 1.55</div>
-      </div>
-      <div class="type-row">
-        <div class="type-label">Body Dense</div>
-        <div class="type-sample dense">Dense body is for resumes, one-pagers, business cards, index cards. At print pt sizes, line-height 1.4-1.45 feels natural; the web-standard 1.6 looks loose in this context.</div>
-        <div class="type-specs"><b>9-9.2 pt</b><br>weight 400<br>line 1.40</div>
       </div>
       <div class="type-row">
         <div class="type-label">Caption</div>
@@ -168,22 +205,19 @@
         <div class="type-sample label">Design System · v1.0</div>
         <div class="type-specs"><b>7.5-8 pt</b><br>weight 600<br>line 1.35</div>
       </div>
-
     </div>
   </section>
 
-  <!-- ============ 03 SPACING ============ -->
+  <!-- ============ 05 SPACING ============ -->
   <section>
     <div class="section-head">
-      <p class="section-num">03 · Spacing &amp; Shape</p>
+      <p class="section-num">05 · Spacing &amp; Shape</p>
       <h2 class="section-title">Spacing &amp; Shape</h2>
       <p class="section-lede">Base unit: 4pt. Denser layouts get smaller margins; more formal documents get larger ones.</p>
     </div>
 
     <table class="space-table">
-      <tr>
-        <th>Scale</th><th>Value</th><th>Use</th><th></th>
-      </tr>
+      <tr><th>Scale</th><th>Value</th><th>Use</th><th></th></tr>
       <tr><td class="name">xs</td><td class="val">2-3 pt</td><td class="use">Inline elements</td><td class="bar"><span style="width:6px"></span></td></tr>
       <tr><td class="name">sm</td><td class="val">4-5 pt</td><td class="use">Tag padding · tight layout</td><td class="bar"><span style="width:12px"></span></td></tr>
       <tr><td class="name">md</td><td class="val">8-10 pt</td><td class="use">Component internals</td><td class="bar"><span style="width:24px"></span></td></tr>
@@ -205,7 +239,7 @@
     </div>
 
     <h3 class="subhead">Depth: Three Shadow Methods</h3>
-    <p style="font-size:12.5px; color: var(--olive); max-width: 720px; margin: 0 0 12px; line-height: 1.55;">Kami avoids traditional hard shadows. Depth is created through ring shadow / whisper shadow / light-dark alternation.</p>
+    <p style="font-size:14px; color: var(--olive); max-width: 720px; margin: 0 0 12px; line-height: 1.55;">Kami avoids traditional hard shadows. Depth is created through ring shadow / whisper shadow / light-dark alternation.</p>
     <div class="shadow-row">
       <div class="shadow-demo sd-ring">
         <p class="t">Ring Shadow</p>
@@ -222,16 +256,15 @@
     </div>
   </section>
 
-  <!-- ============ 04 COMPONENTS ============ -->
+  <!-- ============ 06 COMPONENTS ============ -->
   <section>
     <div class="section-head">
-      <p class="section-num">04 · Components</p>
+      <p class="section-num">06 · Components</p>
       <h2 class="section-title">Components</h2>
       <p class="section-lede">A small, fixed set. Each answers a specific question.</p>
     </div>
 
     <div class="comp-grid">
-
       <div class="comp">
         <h4>Buttons</h4>
         <p class="hint">ring shadow instead of hard drop · 8pt radius</p>
@@ -241,9 +274,8 @@
           <span class="btn btn-ghost">Ghost</span>
         </div>
       </div>
-
       <div class="comp">
-        <h4>Tags (three levels)</h4>
+        <h4>Tags, three levels</h4>
         <p class="hint">solid hex · pick from weak to strong</p>
         <div class="demo" style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
           <span class="tag calm">Light 0.08</span>
@@ -251,13 +283,11 @@
           <span class="tag brush">Brush gradient</span>
         </div>
       </div>
-
       <div class="comp">
         <h4>Quote</h4>
         <p class="hint">left 2pt brand solid + olive text</p>
         <blockquote class="quote">A thousand no's for every yes. Prefer clarity over decoration.</blockquote>
       </div>
-
       <div class="comp">
         <h4>Metric</h4>
         <p class="hint">serif number + sans label · tabular-nums</p>
@@ -267,15 +297,13 @@
           <div class="metric"><span class="metric-value">8</span><span class="metric-label">Rules</span></div>
         </div>
       </div>
-
       <div class="comp">
         <h4>Section Title</h4>
-        <p class="hint">serif 500 + 1pt brand underline (signature style)</p>
+        <p class="hint">serif 500 + 1pt brand underline, signature style</p>
         <div class="demo">
           <span class="sample-section-title">Selected Works · Projects</span>
         </div>
       </div>
-
       <div class="comp">
         <h4>Dash List</h4>
         <p class="hint">dash instead of bullet · more literary</p>
@@ -285,7 +313,6 @@
           <li>Serif carries authority</li>
         </ul>
       </div>
-
       <div class="comp">
         <h4>Code Block</h4>
         <p class="hint">ivory bg + 0.5pt border + 6pt radius</p>
@@ -297,7 +324,6 @@
     var(--brand);
 }</pre>
       </div>
-
       <div class="comp">
         <h4>Featured Card</h4>
         <p class="hint">whisper shadow + 16pt radius</p>
@@ -311,21 +337,20 @@
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
-  <!-- ============ 05 DECISION TABLE ============ -->
+  <!-- ============ 07 DECISION TABLE ============ -->
   <section>
     <div class="section-head">
-      <p class="section-num">05 · Decision Lookup</p>
+      <p class="section-num">07 · Decision Lookup</p>
       <h2 class="section-title">Decision Lookup</h2>
       <p class="section-lede">When in doubt about what to use, consult this table. If it's not here, go back to first principles.</p>
     </div>
     <table class="decision">
       <tr><th>Task</th><th>How</th></tr>
       <tr><td class="task">Large headline</td><td class="how">serif <code>500</code>, size by hierarchy, line-height <code>1.10-1.30</code></td></tr>
-      <tr><td class="task">Reading body</td><td class="how">sans <code>400</code>, <code>9.5-10 pt</code>, line-height <code>1.55</code></td></tr>
+      <tr><td class="task">Reading body</td><td class="how">serif <code>400</code>, <code>9.5-10 pt</code>, line-height <code>1.55</code></td></tr>
       <tr><td class="task">Emphasize a number</td><td class="how"><code>color: var(--brand)</code>, not bold</td></tr>
       <tr><td class="task">Separate two sections</td><td class="how"><code>1pt</code> brand border-bottom, or <code>0.5pt</code> warm-gray dashed</td></tr>
       <tr><td class="task">Quote someone</td><td class="how">Left <code>2pt</code> brand solid + olive text</td></tr>
@@ -334,14 +359,14 @@
       <tr><td class="task">Mark a special card</td><td class="how"><code>border: 0.5pt solid var(--brand)</code> or <code>border-left: 3pt</code></td></tr>
       <tr><td class="task">Begin a section</td><td class="how">Serif title + <code>1pt</code> brand underline below</td></tr>
       <tr><td class="task">Document cover</td><td class="how">Single page, Display size + right-aligned author/date + generous whitespace</td></tr>
-      <tr><td class="task">Data card</td><td class="how">Ivory bg + <code>8pt</code> radius + serif large number (ink blue) + sans small label</td></tr>
+      <tr><td class="task">Data card</td><td class="how">Ivory bg + <code>8pt</code> radius + serif large number, ink blue + sans small label</td></tr>
     </table>
   </section>
 
-  <!-- ============ 06 ANTI ============ -->
+  <!-- ============ 08 ANTI ============ -->
   <section>
     <div class="section-head">
-      <p class="section-num">06 · Anti-Patterns</p>
+      <p class="section-num">08 · Anti-Patterns</p>
       <h2 class="section-title">Anti-Patterns</h2>
       <p class="section-lede">Before breaking a rule, make sure you truly intend to.</p>
     </div>
@@ -355,7 +380,6 @@
         <h5>Do</h5>
         <p>Always use <code>#f5f4ed</code> parchment. Set <code>@page background</code> to the same color to avoid white edges when printing.</p>
       </div>
-
       <div class="no">
         <h5>Don't</h5>
         <p>Use <code>rgba(27,54,93,0.18)</code> for tags. WeasyPrint renders padding and glyph areas at different opacity, creating double rectangles.</p>
@@ -364,7 +388,6 @@
         <h5>Do</h5>
         <p>Use the tint lookup table for equivalent solid hex <code>#E4ECF5</code>. Bug gone, color consistent.</p>
       </div>
-
       <div class="no">
         <h5>Don't</h5>
         <p>Set headlines to <code>font-weight: 700</code> bold. Serif 500 is the system's signature; bold makes the layout feel restless.</p>
@@ -373,53 +396,21 @@
         <h5>Do</h5>
         <p>Keep serif at 500. For stronger presence, increase size or add a 1pt brand underline. Never go bold.</p>
       </div>
-
       <div class="no">
         <h5>Don't</h5>
         <p>Use hard drop shadow <code>0 2px 8px rgba(0,0,0,0.3)</code>. Cold, SaaS-like, prints as dark blobs.</p>
       </div>
       <div class="yes">
         <h5>Do</h5>
-        <p>Ring shadow (<code>0 0 0 1pt</code>) or whisper (<code>rgba 0.05</code>), or simply alternate light and dark sections.</p>
+        <p>Ring shadow <code>0 0 0 1pt</code> or whisper <code>rgba 0.05</code>, or simply alternate light and dark sections.</p>
       </div>
     </div>
   </section>
 
-  <!-- ============ 07 DEMOS ============ -->
+  <!-- ============ 09 BACKGROUND ============ -->
   <section>
     <div class="section-head">
-      <p class="section-num">07 · Demos</p>
-      <h2 class="section-title">See it</h2>
-      <p class="section-lede">Tell Claude what you need in plain language. It produces print-ready documents using kami's design language.</p>
-    </div>
-    <div class="demo-grid">
-      <div class="demo-card">
-        <a href="assets/demos/demo-tesla.pdf"><img src="assets/demos/demo-tesla.png" alt="Tesla company one-pager"></a>
-        <p class="demo-title">One-Pager</p>
-        <p class="demo-desc">Tesla company profile, single A4</p>
-      </div>
-      <div class="demo-card">
-        <a href="assets/demos/demo-agent-slides.pdf"><img src="assets/demos/demo-agent-slides-1.png" alt="Agent slides"></a>
-        <p class="demo-title">Slides</p>
-        <p class="demo-desc">Agent keynote, 6 slides</p>
-      </div>
-      <div class="demo-card">
-        <a href="assets/demos/demo-musk-resume.pdf"><img src="assets/demos/demo-musk-resume.png" alt="Musk resume"></a>
-        <p class="demo-title">Resume</p>
-        <p class="demo-desc">Founder CV, 2 pages strict</p>
-      </div>
-      <div class="demo-card">
-        <a href="assets/demos/demo-kaku.pdf"><img src="assets/demos/demo-kaku.png" alt="Kaku portfolio"></a>
-        <p class="demo-title">Portfolio</p>
-        <p class="demo-desc">Kaku terminal, 6 pages</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ 08 BACKGROUND ============ -->
-  <section>
-    <div class="section-head">
-      <p class="section-num">08 · Background</p>
+      <p class="section-num">09 · Background</p>
       <h2 class="section-title">Background</h2>
     </div>
     <div class="background-text">

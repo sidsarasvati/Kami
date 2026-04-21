@@ -17,6 +17,9 @@
       <p class="eyebrow">Design System · v1.0 · April 2026</p>
       <h1>Kami<span class="cn">紙</span></h1>
       <p class="tagline">你的交付物落在什么纸上。六种文档，一套设计语言: 暖米纸底，油墨蓝点缀，serif 主导层级，编辑级留白。</p>
+      <div style="margin-top:18px; display:flex; gap:10px;">
+        <a href="https://github.com/tw93/kami" class="btn btn-primary" style="text-decoration:none; font-size:12px;">GitHub</a>
+      </div>
     </div>
     <div class="meta">
       <div><b>Canvas</b>&nbsp;&nbsp;#f5f4ed</div>
@@ -27,10 +30,55 @@
     </div>
   </header>
 
-  <!-- ============ 00 MANIFESTO ============ -->
+  <!-- ============ 00 DEMOS ============ -->
   <section>
     <div class="section-head">
-      <p class="section-num">00 · Manifesto</p>
+      <p class="section-num">00 · See it</p>
+      <h2 class="section-title">实际效果</h2>
+      <p class="section-lede">用自然语言告诉 Claude 你要什么文档，它会用 kami 的设计语言直接生成。</p>
+    </div>
+    <div class="demo-grid">
+      <div class="demo-card">
+        <a href="assets/demos/demo-tesla.pdf"><img src="assets/demos/demo-tesla.png" alt="Tesla 公司介绍"></a>
+        <p class="demo-title">One-Pager · 中文</p>
+        <p class="demo-desc">Tesla 公司介绍，单页 A4</p>
+      </div>
+      <div class="demo-card">
+        <a href="assets/demos/demo-agent-slides.pdf"><img src="assets/demos/demo-agent-slides-1.png" alt="Agent slides"></a>
+        <p class="demo-title">Slides · English</p>
+        <p class="demo-desc">Agent keynote, 6 slides</p>
+      </div>
+      <div class="demo-card">
+        <a href="assets/demos/demo-musk-resume.pdf"><img src="assets/demos/demo-musk-resume.png" alt="Musk resume"></a>
+        <p class="demo-title">Resume · English</p>
+        <p class="demo-desc">Founder CV, 2 pages strict</p>
+      </div>
+      <div class="demo-card">
+        <a href="assets/demos/demo-kaku.pdf"><img src="assets/demos/demo-kaku.png" alt="Kaku 作品集"></a>
+        <p class="demo-title">Portfolio · 中文</p>
+        <p class="demo-desc">Kaku 项目作品集，6 页</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 01 INSTALL ============ -->
+  <section>
+    <div class="section-head">
+      <p class="section-num">01 · Install</p>
+      <h2 class="section-title">安装</h2>
+      <p class="section-lede">直接告诉 Claude 你要什么: "帮我生成一份白皮书"、"做一份简历"、"帮我做一份作品集"。skill 会自动触发，不需要斜杠命令。</p>
+    </div>
+<pre class="code"><span class="c"># Claude Code</span>
+npx skills add tw93/kami -a claude-code -g -y
+
+<span class="c"># Codex</span>
+npx skills add tw93/kami -a codex -g -y</pre>
+  </section>
+
+  <!-- ============ 02 MANIFESTO ============ -->
+  <section>
+    <div class="section-head">
+      <p class="section-num">02 · Manifesto</p>
       <h2 class="section-title">设计宣言</h2>
     </div>
     <p class="manifesto">暖米纸底，<em>油墨蓝</em>点缀，serif 承担权威，拒绝硬阴影与花哨配色。这不是一套 UI 框架，是一套印刷品的审美约束。它相信：高质量的文档读起来像文学，不像仪表盘。</p>
@@ -38,7 +86,7 @@
       <li><span class="n">1</span><p>页面背景 parchment <code>#f5f4ed</code>，不用纯白</p></li>
       <li><span class="n">2</span><p>强调色只有油墨蓝 <code>#1B365D</code>，不引入第二种彩色</p></li>
       <li><span class="n">3</span><p>所有灰色暖调 (yellow-brown undertone)，禁止冷蓝灰</p></li>
-      <li><span class="n">4</span><p>标题 serif，正文 / UI sans</p></li>
+      <li><span class="n">4</span><p>英文: serif 通吃标题和正文。中文: 标题 serif，正文 sans</p></li>
       <li><span class="n">5</span><p>Serif 字重固定 500，不用 bold。单一字重是设计语言的一部分</p></li>
       <li><span class="n">6</span><p>行距三档：紧凑标题 1.1–1.3 / 密排 1.4–1.45 / 阅读 1.5–1.55。禁 1.6+</p></li>
       <li><span class="n">7</span><p>Tag 背景必须实色 hex，禁止 rgba（WeasyPrint 双层矩形 bug）</p></li>
@@ -49,7 +97,7 @@
   <!-- ============ 01 COLOR ============ -->
   <section>
     <div class="section-head">
-      <p class="section-num">01 · Color</p>
+      <p class="section-num">03 · Color</p>
       <h2 class="section-title">色彩</h2>
       <p class="section-lede">唯一强调色 + 纯暖调中性灰 + 零冷色。油墨蓝全文档不超过 <b>5%</b> 面积。超过就是堆砌，不是克制。</p>
     </div>
@@ -81,7 +129,7 @@
     </div>
 
     <h3 class="subhead">Tag Tints · rgba → 实色对照</h3>
-    <p style="font-size:12.5px; color: var(--olive); max-width: 720px; margin: 0 0 16px; line-height: 1.55;">油墨蓝 <code style="font-family:var(--mono);font-size:11px;background:#EEF2F7;color:var(--brand);padding:1px 5px;border-radius:2px">#1B365D</code> 叠加在 parchment 上的等效实色。<b style="color:var(--brand);font-weight:500">禁止</b>使用 <code style="font-family:var(--mono);font-size:11px;background:#EEF2F7;color:var(--brand);padding:1px 5px;border-radius:2px">rgba()</code>，WeasyPrint 双层矩形 bug。</p>
+    <p style="font-size:14px; color: var(--olive); max-width: 720px; margin: 0 0 16px; line-height: 1.55;">油墨蓝 <code style="font-family:var(--mono);font-size:12px;background:#EEF2F7;color:var(--brand);padding:1px 5px;border-radius:2px">#1B365D</code> 叠加在 parchment 上的等效实色。<b style="color:var(--brand);font-weight:500">禁止</b>使用 <code style="font-family:var(--mono);font-size:12px;background:#EEF2F7;color:var(--brand);padding:1px 5px;border-radius:2px">rgba()</code>，WeasyPrint 双层矩形 bug。</p>
     <div class="tint-strip">
       <div class="tint"><span class="flag">&nbsp;</span><span class="sample" style="background:#EEF2F7">Tag sample</span><p class="opacity">0.08</p><span class="hex">#EEF2F7</span></div>
       <div class="tint"><span class="flag">&nbsp;</span><span class="sample" style="background:#E4ECF5">Tag sample</span><p class="opacity">0.14</p><span class="hex">#E4ECF5</span></div>
@@ -94,7 +142,7 @@
   <!-- ============ 02 TYPE ============ -->
   <section>
     <div class="section-head">
-      <p class="section-num">02 · Typography</p>
+      <p class="section-num">04 · Typography</p>
       <h2 class="section-title">字体</h2>
       <p class="section-lede">Serif 承担权威，sans 承担功能。Serif 字重固定 500，单一字重是这套系统的签名式样。</p>
     </div>
@@ -175,7 +223,7 @@
   <!-- ============ 03 SPACING ============ -->
   <section>
     <div class="section-head">
-      <p class="section-num">03 · Spacing &amp; Shape</p>
+      <p class="section-num">05 · Spacing &amp; Shape</p>
       <h2 class="section-title">间距 · 形状</h2>
       <p class="section-lede">基础单位 4pt。密度越高 margin 越小，越正式 margin 越大。</p>
     </div>
@@ -205,7 +253,7 @@
     </div>
 
     <h3 class="subhead">深度 · 阴影三法</h3>
-    <p style="font-size:12.5px; color: var(--olive); max-width: 720px; margin: 0 0 12px; line-height: 1.55;">Kami 不用传统硬阴影。深度通过 ring shadow / whisper shadow / 明暗交替 三种方式创造。</p>
+    <p style="font-size:14px; color: var(--olive); max-width: 720px; margin: 0 0 12px; line-height: 1.55;">Kami 不用传统硬阴影。深度通过 ring shadow / whisper shadow / 明暗交替 三种方式创造。</p>
     <div class="shadow-row">
       <div class="shadow-demo sd-ring">
         <p class="t">Ring Shadow</p>
@@ -225,7 +273,7 @@
   <!-- ============ 04 COMPONENTS ============ -->
   <section>
     <div class="section-head">
-      <p class="section-num">04 · Components</p>
+      <p class="section-num">06 · Components</p>
       <h2 class="section-title">组件</h2>
       <p class="section-lede">小而定型的一组。每个都回答一个具体问题。</p>
     </div>
@@ -318,7 +366,7 @@
   <!-- ============ 05 DECISION TABLE ============ -->
   <section>
     <div class="section-head">
-      <p class="section-num">05 · Decision Lookup</p>
+      <p class="section-num">07 · Decision Lookup</p>
       <h2 class="section-title">决策速查</h2>
       <p class="section-lede">遇到"该用什么"的时候查这张表。不在表里 → 回到原则。</p>
     </div>
@@ -341,7 +389,7 @@
   <!-- ============ 06 ANTI ============ -->
   <section>
     <div class="section-head">
-      <p class="section-num">06 · Anti-Patterns</p>
+      <p class="section-num">08 · Anti-Patterns</p>
       <h2 class="section-title">反面示例</h2>
       <p class="section-lede">违反铁律前，先想清楚是否真的要违反。</p>
     </div>
@@ -385,41 +433,10 @@
     </div>
   </section>
 
-  <!-- ============ 07 DEMOS ============ -->
+  <!-- ============ 09 BACKGROUND ============ -->
   <section>
     <div class="section-head">
-      <p class="section-num">07 · Demos</p>
-      <h2 class="section-title">实际效果</h2>
-      <p class="section-lede">用自然语言告诉 Claude 你要什么文档，它会用 kami 的设计语言直接生成。</p>
-    </div>
-    <div class="demo-grid">
-      <div class="demo-card">
-        <a href="assets/demos/demo-tesla.pdf"><img src="assets/demos/demo-tesla.png" alt="Tesla 公司介绍"></a>
-        <p class="demo-title">One-Pager · 中文</p>
-        <p class="demo-desc">Tesla 公司介绍，单页 A4</p>
-      </div>
-      <div class="demo-card">
-        <a href="assets/demos/demo-agent-slides.pdf"><img src="assets/demos/demo-agent-slides-1.png" alt="Agent slides"></a>
-        <p class="demo-title">Slides · English</p>
-        <p class="demo-desc">Agent keynote, 6 slides</p>
-      </div>
-      <div class="demo-card">
-        <a href="assets/demos/demo-musk-resume.pdf"><img src="assets/demos/demo-musk-resume.png" alt="Musk resume"></a>
-        <p class="demo-title">Resume · English</p>
-        <p class="demo-desc">Founder CV, 2 pages strict</p>
-      </div>
-      <div class="demo-card">
-        <a href="assets/demos/demo-kaku.pdf"><img src="assets/demos/demo-kaku.png" alt="Kaku 作品集"></a>
-        <p class="demo-title">Portfolio · 中文</p>
-        <p class="demo-desc">Kaku 项目作品集，6 页</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ 08 BACKGROUND ============ -->
-  <section>
-    <div class="section-head">
-      <p class="section-num">08 · Background</p>
+      <p class="section-num">09 · Background</p>
       <h2 class="section-title">背景</h2>
     </div>
     <div class="background-text">
